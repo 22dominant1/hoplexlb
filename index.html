@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hoplex Leaderboard</title>
+
+  <style>
+    body {
+      font-family: Arial;
+      background: #0f172a;
+      color: white;
+      padding: 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #1e293b;
+    }
+
+    th, td {
+      padding: 12px;
+      border-bottom: 1px solid #334155;
+      text-align: left;
+    }
+
+    th {
+      background: #111827;
+    }
+
+    img {
+      width: 50px;
+      border-radius: 50%;
+    }
+
+    tr:hover {
+      background: #334155;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Hoplex Leaderboard</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Rank</th>
+      <th>Avatar</th>
+      <th>Username</th>
+      <th>Display Name</th>
+      <th>Kills</th>
+      <th>Wins</th>
+      <th>KDR</th>
+      <th>Level</th>
+      <th>Score</th>
+    </tr>
+  </thead>
+
+  <tbody id="leaderboard"></tbody>
+</table>
+
+<script>
+
+const players = [
+
+{
+  rank: 1,
+  username: "Theunleashing",
+  display: "king von",
+  kills: 1831,
+  wins: 1591,
+  kdr: 16.06,
+  level: 270,
+  score: 5960.335,
+  avatar: "https://api.hoplex.xyz/public-assets/v1/users/Theunleashing/avatar?size=420x420&format=png&redirect=1"
+},
+
+{
+  rank: 2,
+  username: "moneyguy3471",
+  display: "Newbie444",
+  kills: 3073,
+  wins: 2407,
+  kdr: 5.33,
+  level: 199,
+  score: 5454.1455,
+  avatar: "https://api.hoplex.xyz/public-assets/v1/users/moneyguy3471/avatar?size=420x420&format=png&redirect=1"
+},
+
+{
+  rank: 3,
+  username: "ItsFlairon",
+  display: "flair",
+  kills: 2623,
+  wins: 1528,
+  kdr: 9.9,
+  level: 166,
+  score: 4752.153,
+  avatar: "https://api.hoplex.xyz/public-assets/v1/users/ItsFlairon/avatar?size=420x420&format=png&redirect=1"
+}
+
+];
+
+const table = document.getElementById("leaderboard");
+
+players.forEach(player => {
+
+  table.innerHTML += `
+    <tr>
+      <td>#${player.rank}</td>
+
+      <td>
+        <img src="${player.avatar}">
+      </td>
+
+      <td>${player.username}</td>
+      <td>${player.display}</td>
+      <td>${player.kills}</td>
+      <td>${player.wins}</td>
+      <td>${player.kdr}</td>
+      <td>${player.level}</td>
+      <td>${player.score}</td>
+    </tr>
+  `;
+});
+
+</script>
+
+</body>
+</html>
